@@ -1,0 +1,31 @@
+<div class="app-container">
+  <div class="selection-container">
+    <h2>Filter Items</h2>
+
+    <select (change)="updateCategory($event)">
+      <option value="">All Categories</option>
+      @for (category of categories(); track category) {
+      <option [value]="category">
+        {{ category | titlecase }}
+      </option>
+      }
+    </select>
+
+    <input
+      type="text"
+      placeholder="Search items..."
+      (input)="updateSearchQuery($event)"
+    />
+  </div>
+  <div class="results-container">
+    <h2>Items in {{ selectedCategory() || "All" | titlecase }} Category</h2>
+    <ul>
+      @for (item of filteredItems(); track item) {
+      <li>{{ item.title }}</li>
+      }
+    </ul>
+    @if (filteredItems().length === 0) {
+    <p>No items found</p>
+    }
+  </div>
+</div>

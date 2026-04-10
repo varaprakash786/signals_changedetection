@@ -1,0 +1,110 @@
+/* Main container */
+.app-container {
+  display: flex;
+  height: 90vh; /* Full viewport height */
+  max-width: 80vw;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Prevent overflow outside the container */
+}
+
+/* Selection container (left side) */
+.selection-container {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  background-color: #fff;
+  border-right: 1px solid #ddd; /* Divider between the sections */
+  padding: 20px;
+  overflow-y: auto; /* Scrollable within the container */
+}
+
+.selection-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+select,
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus,
+input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Results container (right side) */
+.results-container {
+  flex: 2;
+  background-color: #ffffff;
+  padding: 20px;
+  overflow-y: auto; /* Scrollable within the container */
+  display: flex;
+  flex-direction: column;
+}
+
+.results-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* List styles */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #555;
+  font-size: 16px;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+/* No results message */
+p {
+  text-align: center;
+  color: #e74c3c;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .selection-container,
+  .results-container {
+    height: 50vh; /* Half the viewport height when stacked */
+  }
+}

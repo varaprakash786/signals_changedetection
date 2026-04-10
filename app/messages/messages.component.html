@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+  <h3>Chat</h3>
+  <textarea
+    id="message"
+    name="message"
+    [(ngModel)]="enteredText"
+    placeholder="Enter Message"
+  ></textarea>
+
+  <p class="actions">
+    <button>Save</button>
+  </p>
+</form>
+
+<p>{{ msgComp }}</p>

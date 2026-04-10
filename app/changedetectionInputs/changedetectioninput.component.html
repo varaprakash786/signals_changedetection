@@ -1,0 +1,5 @@
+<h1>Change Detection</h1>
+<p>{{ appOutput }}</p>
+
+<app-messages (add)="addMessage($event)"></app-messages>
+<app-messages-list [messages]="messages()"></app-messages-list>

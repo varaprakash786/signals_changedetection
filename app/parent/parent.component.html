@@ -1,0 +1,8 @@
+<div class="container">
+  <h2>Parent Component</h2>
+  @for (user of users(); track user.name) {
+  <app-child [data]="user"></app-child>
+  }
+  <button (click)="updateUser()">Update Data</button>
+  <ng-container>{{ parentComp }}</ng-container>
+</div>
